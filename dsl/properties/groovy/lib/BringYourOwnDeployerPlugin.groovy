@@ -67,7 +67,7 @@ class BringYourOwnDeployerPlugin extends FlowPlugin {
             log.info("Using deployment artifacts provided by user within procedure parameter")
 
             log.info("Information about deployment artifacts to be stored in the property ${deploymentArtifactsPropertyPath}:")
-            log.info(defaultDeploymentArtifacts)
+            log.info(sp.getDeploymentArtifacts())
             sr.setOutcomeProperty(deploymentArtifactsPropertyPath, sp.getDeploymentArtifacts())
         } else {
             log.info("Nothing to be stored in the property ${deploymentArtifactsPropertyPath} by this plugin")
@@ -111,7 +111,7 @@ class BringYourOwnDeployerPlugin extends FlowPlugin {
             log.info("Using deployment artifacts provided by user within procedure parameter")
 
             log.info("Information about deployment artifacts to be stored in the property ${deploymentArtifactsPropertyPath}:")
-            log.info(defaultDeploymentArtifacts)
+            log.info(sp.getDeploymentArtifacts())
             sr.setOutcomeProperty(deploymentArtifactsPropertyPath, sp.getDeploymentArtifacts())
         } else {
             log.info("Nothing to be stored in the property ${deploymentArtifactsPropertyPath} by this plugin")
