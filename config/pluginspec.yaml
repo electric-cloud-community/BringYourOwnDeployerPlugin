@@ -3,9 +3,10 @@ pluginInfo:
   version: '0.0.2'
   description: 'Demo Plugin to demonstrate the third party inventory interface'
   author: 'CloudBees'
-  supportUrl: 'none'
+  supportUrl: 'https://github.com/electric-cloud-community'
   category: 'Utilities'
   shell: 'ec-groovy'
+  repositoryUrl: 'https://github.com/electric-cloud-community/BringYourOwnDeployerPlugin'
 
 procedures:
 -
