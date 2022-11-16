@@ -26,7 +26,7 @@ These procedures store information about "deployed" artifacts into ec_deployment
       "additionalDetails": {
         "deploymentTargets": "target2, target4",
         "detail1": "value1",
-        "detail2": "vFalue2"
+        "detail2": "value2"
       }
     }
   ]
