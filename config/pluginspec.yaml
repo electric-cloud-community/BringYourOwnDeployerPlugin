@@ -1,6 +1,6 @@
 pluginInfo:
   pluginName: 'BringYourOwnDeployerPlugin'
-  version: '0.0.1'
+  version: '0.0.2'
   description: 'Demo Plugin to demonstrate the third party inventory interface'
   author: 'CloudBees'
   supportUrl: 'none'
