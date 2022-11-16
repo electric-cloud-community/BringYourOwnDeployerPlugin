@@ -1,0 +1,98 @@
+Plugin version @PLUGIN_VERSION@
+
+Revised on November 16, 2022
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[[procedures]]
+== Plugin procedures
+
+
+
+
+[[DeployProcedure]]
+=== Deploy Procedure
+
+
+Example of deploy procedure which can set needed job properties containing information about 3rd party artifacts
+
+
+
+==== Deploy Procedure parameters
+[cols=",",options="header"]
+|===
+|Parameter |Description
+
+| __**Use Default Artifacts**__ | Use default artifacts hardcoded in the plugin code for demo purposes
+
+
+| Deployment Artifacts | JSON intput with appropriate format which contains information about 3rd party artifacts
+
+
+|===
+
+
+
+
+
+
+[[UndeployProcedure]]
+=== Undeploy Procedure
+
+
+Any undeploy procedure
+
+
+
+==== Undeploy Procedure parameters
+[cols=",",options="header"]
+|===
+|Parameter |Description
+
+| __**Use Default Artifacts**__ | Use default artifacts hardcoded in the plugin code for demo purposes
+
+
+| Deployment Artifacts | JSON intput with appropriate format which contains information about 3rd party artifacts
+
+
+|===
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[[rns]]
+== Release notes
+
+
+=== BringYourOwnDeployerPlugin 0.0.1
+
+- Initial draft version
+
+
