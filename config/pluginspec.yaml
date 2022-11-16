@@ -7,6 +7,9 @@ pluginInfo:
   category: 'Utilities'
   shell: 'ec-groovy'
   repositoryUrl: 'https://github.com/electric-cloud-community/BringYourOwnDeployerPlugin'
+  label: 'Bring Your Own Deployer Plugin (Demo)'
+  detailedDescription: |
+    Demo Plugin to demonstrate the third party inventory interface
 
 procedures:
 -
