@@ -1,0 +1,52 @@
+pluginInfo:
+  pluginName: 'BringYourOwnDeployerPlugin'
+  version: '1.0.0'
+  description: 'Demo Plugin to demonstrate the third party inventory interface'
+  author: 'CloudBees'
+  supportUrl: 'none'
+  category: 'Utilities'
+  shell: 'ec-groovy'
+
+procedures:
+-
+  name: 'Deploy Procedure'
+  description: 'Example of deploy procedure which can set needed job properties containing information about 3rd party artifacts'
+  hasConfig: false
+  parameters:
+  -
+    name: useDefaultArtifacts
+    documentation: Use default artifacts hardcoded in the plugin code for demo purposes
+    required: true
+    type: checkbox
+    label: Use Default Artifacts
+    checkedValue: true
+    uncheckedValue: false
+    initiallyChecked: 1
+  - 
+    name: deploymentArtifacts
+    documentation: JSON intput with appropriate format which contains information about 3rd party artifacts
+    required: false
+    type: textarea
+    label: Deployment Artifacts
+    condition: ${useDefaultArtifacts} == 'false'
+-
+  name: 'Undeploy Procedure'
+  description: 'Any undeploy procedure'
+  hasConfig: false
+  parameters:
+  -
+    name: useDefaultArtifacts
+    documentation: Use default artifacts hardcoded in the plugin code for demo purposes
+    required: true
+    type: checkbox
+    label: Use Default Artifacts
+    checkedValue: true
+    uncheckedValue: false
+    initiallyChecked: 1
+  -
+    name: deploymentArtifacts
+    documentation: JSON intput with appropriate format which contains information about 3rd party artifacts
+    required: false
+    type: textarea
+    label: Deployment Artifacts
+    condition: ${useDefaultArtifacts} == 'false'

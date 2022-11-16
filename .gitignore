@@ -1,0 +1,6 @@
+!ecpluginbuilder.exe
+.idea
+*.iml
+build
+.gradle/
+.assets/
