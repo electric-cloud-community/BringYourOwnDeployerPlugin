@@ -6,10 +6,6 @@ import com.cloudbees.flowpdf.StepParameters
 
 class DeployProcedureParameters {
     /**
-    * Label: Use Default Artifacts, type: checkbox
-    */
-    boolean useDefaultArtifacts
-    /**
     * Label: Deployment Artifacts, type: textarea
     */
     String deploymentArtifacts
@@ -17,13 +13,36 @@ class DeployProcedureParameters {
     static DeployProcedureParameters initParameters(StepParameters sp) {
         DeployProcedureParameters parameters = new DeployProcedureParameters()
 
-        def useDefaultArtifacts = sp.getParameter('useDefaultArtifacts').value == "true"
-        parameters.useDefaultArtifacts = useDefaultArtifacts
-
         def deploymentArtifacts = sp.getParameter('deploymentArtifacts').value
-        parameters.deploymentArtifacts = deploymentArtifacts
+        parameters.deploymentArtifacts = deploymentArtifacts  ?: """{
+  "deploymentSystem": "Some3rdPartyTool",
+  "deploymentUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/",
+  "artifacts": [
+    {
+      "artifactName": "artifact1",
+      "artifactVersion": "1.2.5",
+      "artifactUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/10.0.14-atlassian-hosted/apache-tomcat-10.0.14-atlassian-hosted.pom",
+      "additionalDetails": {
+        "deploymentTargets": "target1, target2",
+        "detail1": "value1",
+        "detail2": "value2"
+      }
+    },
+    {
+      "artifactName": "artifact2",
+      "artifactVersion": "3.2.6",
+      "artifactUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/10.0.14-atlassian-hosted/apache-tomcat-10.0.14-atlassian-hosted.pom",
+      "additionalDetails": {
+        "deploymentTargets": "target2, target4",
+        "detail1": "value1",
+        "detail2": "vFalue2"
+      }
+    }
+  ]
+}
+"""
 
         return parameters
     }
 }
-// DO NOT EDIT THIS BLOCK ABOVE ^^^=== Parameters ends, checksum: 38a7cc22e160aef59464b43d113cbca8 ===
+// DO NOT EDIT THIS BLOCK ABOVE ^^^=== Parameters ends, checksum: c87f9344e50c2a8868a5c73fcb88f48d ===

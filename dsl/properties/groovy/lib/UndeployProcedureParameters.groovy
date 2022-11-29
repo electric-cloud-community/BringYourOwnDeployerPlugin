@@ -6,10 +6,6 @@ import com.cloudbees.flowpdf.StepParameters
 
 class UndeployProcedureParameters {
     /**
-    * Label: Use Default Artifacts, type: checkbox
-    */
-    boolean useDefaultArtifacts
-    /**
     * Label: Deployment Artifacts, type: textarea
     */
     String deploymentArtifacts
@@ -17,13 +13,22 @@ class UndeployProcedureParameters {
     static UndeployProcedureParameters initParameters(StepParameters sp) {
         UndeployProcedureParameters parameters = new UndeployProcedureParameters()
 
-        def useDefaultArtifacts = sp.getParameter('useDefaultArtifacts').value == "true"
-        parameters.useDefaultArtifacts = useDefaultArtifacts
-
-        def deploymentArtifacts = sp.getParameter('deploymentArtifacts').value
-        parameters.deploymentArtifacts = deploymentArtifacts
+        def deploymentArtifacts = sp.getRequiredParameter('deploymentArtifacts').value
+        parameters.deploymentArtifacts = deploymentArtifacts  ?: """{
+  "deploymentSystem": "Some3rdPartyTool",
+  "deploymentUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/",
+  "artifacts": [
+      "artifact1",
+      "artifact2",
+      "artifact3",
+      "artifact1x",
+      "artifact2x",
+      "artifact3x"
+  ]
+}
+"""
 
         return parameters
     }
 }
-// DO NOT EDIT THIS BLOCK ABOVE ^^^=== Parameters ends, checksum: 128a0c2ad42c68b484aabc003a0157da ===
+// DO NOT EDIT THIS BLOCK ABOVE ^^^=== Parameters ends, checksum: 65ef5cbf0a8b01dda2ece9c58fd00f29 ===

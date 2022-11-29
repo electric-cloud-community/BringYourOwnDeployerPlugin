@@ -21,7 +21,6 @@ class BringYourOwnDeployerPlugin extends FlowPlugin {
 /**
     * deployProcedure - Deploy Procedure/Deploy Procedure
     * Add your code into this method and it will be called when the step runs
-    * @param useDefaultArtifacts (required: true)
     * @param deploymentArtifacts (required: false)
     
     */
@@ -31,39 +30,7 @@ class BringYourOwnDeployerPlugin extends FlowPlugin {
 
         String deploymentArtifactsPropertyPath = "/myJob/ec_deployment_artifacts"
 
-        if (sp.getUseDefaultArtifacts()) {
-            log.info("Using default deployment artifacts (hardcoded in plugin)")
-            String autoVersion = new SimpleDateFormat("yyyy.MMdd.HHmmss").format(new Date());
-            String defaultDeploymentArtifacts = """{
-  "deploymentSystem": "Some3rdPartyTool",
-  "deploymentUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/",
-  "artifacts": [
-    {
-      "artifactName": "artifact1",
-      "artifactVersion": "1.2.5",
-      "artifactUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/10.0.14-atlassian-hosted/apache-tomcat-10.0.14-atlassian-hosted.pom",
-      "additionalDetails": {
-        "deploymentTargets": "target1, target2",
-        "detail1": "value1",
-        "detail2": "value2"
-      }
-    },
-    {
-      "artifactName": "artifact2",
-      "artifactVersion": "${autoVersion}",
-      "artifactUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/10.0.14-atlassian-hosted/apache-tomcat-10.0.14-atlassian-hosted.pom",
-      "additionalDetails": {
-        "deploymentTargets": "target2, target4",
-        "detail1": "value1",
-        "detail2": "vFalue2"
-      }
-    }
-  ]
-}"""
-            log.info("Information about deployment artifacts to be stored in the property ${deploymentArtifactsPropertyPath}:")
-            log.info(defaultDeploymentArtifacts)
-            sr.setOutcomeProperty(deploymentArtifactsPropertyPath, defaultDeploymentArtifacts)
-        } else if (sp.getDeploymentArtifacts()) {
+        if (sp.getDeploymentArtifacts()) {
             log.info("Using deployment artifacts provided by user within procedure parameter")
 
             log.info("Information about deployment artifacts to be stored in the property ${deploymentArtifactsPropertyPath}:")
@@ -80,7 +47,6 @@ class BringYourOwnDeployerPlugin extends FlowPlugin {
 /**
     * undeployProcedure - Undeploy Procedure/Undeploy Procedure
     * Add your code into this method and it will be called when the step runs
-    * @param useDefaultArtifacts (required: true)
     * @param deploymentArtifacts (required: false)
     
     */
@@ -90,24 +56,7 @@ class BringYourOwnDeployerPlugin extends FlowPlugin {
 
         String deploymentArtifactsPropertyPath = "/myJob/ec_deployment_artifacts"
 
-        if (sp.getUseDefaultArtifacts()) {
-            log.info("Using default deployment artifacts (hardcoded in plugin)")
-            String defaultDeploymentArtifacts = """{
-  "deploymentSystem": "Some3rdPartyTool",
-  "deploymentUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/",
-  "artifacts": [
-    "artifact1",
-    "artifact2",
-    "artifact3",
-    "artifact1x",
-    "artifact2x",
-    "artifact3x"
-  ]
-}"""
-            log.info("Information about deployment artifacts to be stored in the property ${deploymentArtifactsPropertyPath}:")
-            log.info(defaultDeploymentArtifacts)
-            sr.setOutcomeProperty(deploymentArtifactsPropertyPath, defaultDeploymentArtifacts)
-        } else if (sp.getDeploymentArtifacts()) {
+        if (sp.getDeploymentArtifacts()) {
             log.info("Using deployment artifacts provided by user within procedure parameter")
 
             log.info("Information about deployment artifacts to be stored in the property ${deploymentArtifactsPropertyPath}:")
