@@ -1,6 +1,6 @@
 Plugin version @PLUGIN_VERSION@
 
-Revised on November 16, 2022
+Revised on November 29, 2022
 
 
 
@@ -36,9 +36,6 @@ Example of deploy procedure which can set needed job properties containing infor
 |===
 |Parameter |Description
 
-| __**Use Default Artifacts**__ | Use default artifacts hardcoded in the plugin code for demo purposes
-
-
 | Deployment Artifacts | JSON intput with appropriate format which contains information about 3rd party artifacts
 
 
@@ -62,10 +59,7 @@ Any undeploy procedure
 |===
 |Parameter |Description
 
-| __**Use Default Artifacts**__ | Use default artifacts hardcoded in the plugin code for demo purposes
-
-
-| Deployment Artifacts | JSON intput with appropriate format which contains information about 3rd party artifacts
+| __**Deployment Artifacts**__ | JSON intput with appropriate format which contains information about 3rd party artifacts
 
 
 |===

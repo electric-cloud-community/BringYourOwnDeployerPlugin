@@ -17,40 +17,60 @@ procedures:
   description: 'Example of deploy procedure which can set needed job properties containing information about 3rd party artifacts'
   hasConfig: false
   parameters:
-  -
-    name: useDefaultArtifacts
-    documentation: Use default artifacts hardcoded in the plugin code for demo purposes
-    required: true
-    type: checkbox
-    label: Use Default Artifacts
-    checkedValue: true
-    uncheckedValue: false
-    initiallyChecked: 1
   - 
     name: deploymentArtifacts
     documentation: JSON intput with appropriate format which contains information about 3rd party artifacts
     required: false
     type: textarea
     label: Deployment Artifacts
-    condition: ${useDefaultArtifacts} == 'false'
+    value: |
+      {
+        "deploymentSystem": "Some3rdPartyTool",
+        "deploymentUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/",
+        "artifacts": [
+          {
+            "artifactName": "artifact1",
+            "artifactVersion": "1.2.5",
+            "artifactUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/10.0.14-atlassian-hosted/apache-tomcat-10.0.14-atlassian-hosted.pom",
+            "additionalDetails": {
+              "deploymentTargets": "target1, target2",
+              "detail1": "value1",
+              "detail2": "value2"
+            }
+          },
+          {
+            "artifactName": "artifact2",
+            "artifactVersion": "3.2.6",
+            "artifactUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/10.0.14-atlassian-hosted/apache-tomcat-10.0.14-atlassian-hosted.pom",
+            "additionalDetails": {
+              "deploymentTargets": "target2, target4",
+              "detail1": "value1",
+              "detail2": "vFalue2"
+            }
+          }
+        ]
+      }
 -
   name: 'Undeploy Procedure'
   description: 'Any undeploy procedure'
   hasConfig: false
   parameters:
   -
-    name: useDefaultArtifacts
-    documentation: Use default artifacts hardcoded in the plugin code for demo purposes
-    required: true
-    type: checkbox
-    label: Use Default Artifacts
-    checkedValue: true
-    uncheckedValue: false
-    initiallyChecked: 1
-  -
     name: deploymentArtifacts
     documentation: JSON intput with appropriate format which contains information about 3rd party artifacts
-    required: false
+    required: true
     type: textarea
     label: Deployment Artifacts
-    condition: ${useDefaultArtifacts} == 'false'
+    value: |
+      {
+        "deploymentSystem": "Some3rdPartyTool",
+        "deploymentUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/",
+        "artifacts": [
+            "artifact1",
+            "artifact2",
+            "artifact3",
+            "artifact1x",
+            "artifact2x",
+            "artifact3x"
+        ]
+      }
