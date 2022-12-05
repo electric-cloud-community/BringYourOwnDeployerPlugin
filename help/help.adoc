@@ -1,6 +1,6 @@
 Plugin version @PLUGIN_VERSION@
 
-Revised on November 29, 2022
+Revised on December 05, 2022
 
 
 
@@ -27,16 +27,16 @@ Revised on November 29, 2022
 === Deploy Procedure
 
 
-Example of deploy procedure which can set needed job properties containing information about 3rd party artifacts
+Example of deploy procedure that sets required job properties for third-party artifacts
 
 
 
 ==== Deploy Procedure parameters
-[cols=",",options="header"]
+[cols="1a,1a",options="header"]
 |===
 |Parameter |Description
 
-| Deployment Artifacts | JSON intput with appropriate format which contains information about 3rd party artifacts
+| Deployment Artifacts | JSON input in valid format with information about third-party artifacts.
 
 
 |===
@@ -55,11 +55,11 @@ Any undeploy procedure
 
 
 ==== Undeploy Procedure parameters
-[cols=",",options="header"]
+[cols="1a,1a",options="header"]
 |===
 |Parameter |Description
 
-| __**Deployment Artifacts**__ | JSON intput with appropriate format which contains information about 3rd party artifacts
+| __**Deployment Artifacts**__ | JSON input in valid format with information about third-party artifacts.
 
 
 |===
