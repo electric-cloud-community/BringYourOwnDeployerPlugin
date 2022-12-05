@@ -9,17 +9,17 @@ pluginInfo:
   repositoryUrl: 'https://github.com/electric-cloud-community/BringYourOwnDeployerPlugin'
   label: 'Bring Your Own Deployer Plugin (Demo)'
   detailedDescription: |
-    Demo Plugin to demonstrate the third party inventory interface
+    Demo plugin to demonstrate the third-party inventory interface
 
 procedures:
 -
   name: 'Deploy Procedure'
-  description: 'Example of deploy procedure which can set needed job properties containing information about 3rd party artifacts'
+  description: 'Example of deploy procedure that sets required job properties for third-party artifacts'
   hasConfig: false
   parameters:
   - 
     name: deploymentArtifacts
-    documentation: JSON intput with appropriate format which contains information about 3rd party artifacts
+    documentation: JSON input in valid format with information about third-party artifacts.
     required: false
     type: textarea
     label: Deployment Artifacts
@@ -57,7 +57,7 @@ procedures:
   parameters:
   -
     name: deploymentArtifacts
-    documentation: JSON intput with appropriate format which contains information about 3rd party artifacts
+    documentation: JSON input in valid format with information about third-party artifacts.
     required: true
     type: textarea
     label: Deployment Artifacts
