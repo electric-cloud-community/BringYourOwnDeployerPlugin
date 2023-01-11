@@ -14,19 +14,7 @@ class UndeployProcedureParameters {
         UndeployProcedureParameters parameters = new UndeployProcedureParameters()
 
         def deploymentArtifacts = sp.getRequiredParameter('deploymentArtifacts').value
-        parameters.deploymentArtifacts = deploymentArtifacts  ?: """{
-  "deploymentSystem": "Some3rdPartyTool",
-  "deploymentUrl": "https://repository.sonatype.org/service/local/repositories/atlassian-maven-external/content/org/apache/tomcat/apache-tomcat/",
-  "artifacts": [
-      "artifact1",
-      "artifact2",
-      "artifact3",
-      "artifact1x",
-      "artifact2x",
-      "artifact3x"
-  ]
-}
-"""
+        parameters.deploymentArtifacts = deploymentArtifacts
 
         return parameters
     }
