@@ -58,7 +58,7 @@ procedures:
   -
     name: deploymentArtifacts
     documentation: JSON input in valid format with information about third-party artifacts.
-    required: true
+    required: false
     type: textarea
     label: Deployment Artifacts
     value: |
