@@ -27,8 +27,6 @@ To create plugin configurations in CloudBees CD/RO, complete the following steps
 6. Select the appropriate Plugin for the configuration.
 7. Configure the parameters per the descriptions below.
 
-Revised on November 29, 2022
-
 <a name="procedures"/>
 
 ## Plugin procedures
