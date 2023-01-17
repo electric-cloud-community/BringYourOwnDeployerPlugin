@@ -1,5 +1,5 @@
 # BringYourOwnDeployerPlugin
-Used to deploy and undeploy artifacts using CloudBees CD/RO's third-party inventory interface.
+Used to provide details about artifacts being deployed and undeploy using CloudBees CD/RO's third-party inventory interface.
 
 # Description
 To demonstrate CloudBees CD/RO's third-party inventory interface, this plugin includes two procedures:
