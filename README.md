@@ -121,6 +121,9 @@ Example:
 
 ## Release notes
 
+### BringYourOwnDeployerPlugin 0.0.2
+
+- Initial release version
 
 ### BringYourOwnDeployerPlugin 0.0.1
 
